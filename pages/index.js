@@ -5,6 +5,7 @@ import AttendanceViewer from "components/View";
 import SavePresentStudents from "components/Save";
 import Generate from "components/Generate";
 import { useEffect } from "react";
+import StudentCollection from "components/Create";
 
 export default function Home() {
   const [component, setComponent] = useState("");
@@ -23,6 +24,8 @@ export default function Home() {
         return <SavePresentStudents />;
       case "Generate":
         return <Generate />;
+      case "Create":
+        return <StudentCollection />;
       default:
         return (
           <>
@@ -59,6 +62,13 @@ export default function Home() {
               >
                 Create
               </button>
+              <button
+                value="Create"
+                className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+                onClick={handleClick}
+              >
+                Update Data
+              </button>
             </div>
           </>
         );
@@ -81,12 +91,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="container mx-auto px-8 my-10">
-        {renderComponent()}
-      </main>
+      <main className="container mx-auto px-8 my-10">{renderComponent()}</main>
       <style jsx global>{`
         body {
-          background-color: #0A2647;
+          background-color: #0a2647;
           color: #fff;
           font-family: "Helvetica Neue", sans-serif;
         }
@@ -112,7 +120,6 @@ export default function Home() {
         .grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-
         }
       `}</style>
     </>
