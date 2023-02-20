@@ -94,7 +94,7 @@ export default function Home() {
       <main className="container mx-auto px-8 my-10">{renderComponent()}</main>
       <style jsx global>{`
         body {
-          background-color: #0a2647;
+          background-color: #7B8FA1;
           color: #fff;
           font-family: "Helvetica Neue", sans-serif;
         }
