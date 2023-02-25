@@ -76,7 +76,7 @@ function TodayAttendance() {
   });
 
   return (
-<div className="flex justify-between items-center mb-4">
+<div className="flex justify-between text center items-center mb-4">
   <div className="flex items-center flex-grow">
     <select
       value={selectedSection}
