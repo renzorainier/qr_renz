@@ -142,8 +142,6 @@ function TodayAttendance() {
         </tbody>
       </table>
     </div>
-
-
   );
 }
 
