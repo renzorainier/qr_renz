@@ -76,27 +76,32 @@ function TodayAttendance() {
   });
 
   return (
-    <div  className="text-gray-700 bg-white p-8 pr-8 mr-8 rounded-lg shadow-lg inline-block">
-      <h2 className="text-gray-700 text-xl font-bold mb-4">
-        Attendance For Today
-      </h2>
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center"></div>
-        <div className="flex items-center">
-          <label className="text-gray-700 font-bold mr-2">Section:</label>
-          <select
-            value={selectedSection}
-            onChange={handleSectionChange}
-            className="border rounded-md py-1 px-2 text-gray-700"
-          >
-            <option value="">All</option>
-            {sections.map((section) => (
-              <option key={section} value={section}>
-                {section}
-              </option>
-            ))}
-          </select>
-        </div>
+<div className="flex justify-between items-center mb-4">
+  <div className="flex items-center flex-grow">
+    <select
+      value={selectedSection}
+      onChange={handleSectionChange}
+      className="border rounded-md py-1 px-2 text-gray-700 w-full"
+    >
+      <option value="">All</option>
+      {sections.map((section) => (
+        <option key={section} value={section}>
+          {section}
+        </option>
+      ))}
+    </select>
+  </div>
+  <div className="flex items-center flex-grow">
+    <input
+      type="text"
+      value={searchQuery}
+      onChange={handleSearchQueryChange}
+      className="border rounded-md py-1 px-2 text-gray-700 w-full"
+      placeholder="Search by name"
+    />
+  </div>
+</div>
+
         <div className="flex items-center">
           <label className="text-gray-700 font-bold mr-2">Search:</label>
           <input
