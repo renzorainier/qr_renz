@@ -92,36 +92,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto px-8 my-10">{renderComponent()}</main>
-      <style jsx global>{`
-        body {
-          background-color: #474E68;
-          color: #fff;
-          font-family: "Helvetica Neue", sans-serif;
-        }
-
-        button {
-          border: none;
-          outline: none;
-          cursor: pointer;
-        }
-
-        button:hover {
-          filter: brightness(110%);
-        }
-
-        button:active {
-          filter: brightness(120%);
-        }
-
-        button:focus {
-          box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0199c6;
-        }
-
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-        }
-      `}</style>
     </>
   );
 }

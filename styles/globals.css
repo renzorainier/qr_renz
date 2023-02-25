@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #474E68;
+  color: #fff;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
