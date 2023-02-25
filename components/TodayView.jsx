@@ -101,52 +101,42 @@ function TodayAttendance() {
     />
   </div>
 </div>
-
-        <div className="flex items-center">
-          <label className="text-gray-700 font-bold mr-2">Search:</label>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchQueryChange}
-            className="border rounded-md py-1 px-2 text-gray-700"
-            placeholder="Search by name"
-          />
-        </div>
       <div className="overflow-x-auto">
-        <table className="table-auto border-collapse w-full">
-          <thead>
-            <tr>
-              <th className="border p-2">#</th>
-              <th className="border p-2">Name</th>
-              <th className="border p-2">Strand</th>
-              <th className="border p-2 ">Section</th>
-              <th className="border p-2">Last Scan</th>
+      <table className="table-auto w-full">
+        <thead>
+          <tr>
+            <th className="p-2">#</th>
+            <th className="p-2">Name</th>
+            <th className="p-2">Strand</th>
+            <th className="p-2">Sec</th>
+            <th className="p-2">Scan</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedAttendance.map((student, index) => (
+            <tr className={`${index % 2 === 0 ? 'bg-gray-100' : ''}`} key={student.id}>
+              <td className="p-2">
+                {sortedAttendance.length - index}
+              </td>
+              <td className="p-2 font-bold whitespace-nowrap">
+                {student.name}
+              </td>
+              <td className="p-2">{student.strand}</td>
+              <td className="p-2">{student.section}</td>
+              <td className="p-2 whitespace-nowrap">
+                {student.lastScan
+                  ? student.lastScan.toLocaleTimeString([], {
+                      hour: "numeric",
+                      minute: "2-digit",
+                    })
+                  : "N/A"}
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {sortedAttendance.map((student, index) => (
-              <tr key={student.id}>
-                <td className="border p-2">
-                  {sortedAttendance.length - index}
-                </td>
-                <td className="border p-2" style={{ whiteSpace: "nowrap" }}>
-                  {student.name}
-                </td>
-                <td className="border p-2">{student.strand}</td>
-                <td className="border p-2 ">{student.section}</td>
-                <td className="border p-2" style={{ whiteSpace: "nowrap" }}>
-                  {student.lastScan
-                    ? student.lastScan.toLocaleTimeString([], {
-                        hour: "numeric",
-                        minute: "2-digit",
-                      })
-                    : "N/A"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
   );
 }
 
