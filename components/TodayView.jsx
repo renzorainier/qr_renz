@@ -96,10 +96,10 @@ function TodayAttendance() {
   </div>
   <div className="flex items-center flex-grow">
     <input
+      className="border rounded-md py-1 px-2 text-gray-700 w-full"
       type="text"
       value={searchQuery}
       onChange={handleSearchQueryChange}
-      className="border rounded-md py-1 px-2 text-gray-700 w-full"
       placeholder="Search by name"
       />
   </div>
