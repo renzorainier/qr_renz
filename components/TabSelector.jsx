@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PastAttendance from "/components/PastView";
-import TodayAttendance from "/components/TodayView";
+import PastAttendance from "components/PastView";
+import TodayAttendance from "components/TodayView";
 
 function TabSelector() {
   const [selectedTab, setSelectedTab] = useState(1);
