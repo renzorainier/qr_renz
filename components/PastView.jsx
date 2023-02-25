@@ -83,7 +83,8 @@ function PastAttendance() {
       <p className="text-gray-700">No attendance records found for this date.</p>
     )}
   </div>
-</div>
 );
 
 }
+
+export default PastAttendance
