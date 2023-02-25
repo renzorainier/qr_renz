@@ -101,23 +101,26 @@ function TodayAttendance() {
     />
   </div>
 </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto rounded-lg">
       <table className="table-auto w-full">
-        <thead>
+        <thead className="bg-gray-200">
           <tr>
             <th className="p-2">#</th>
             <th className="p-2">Name</th>
             <th className="p-2">Strand</th>
             <th className="p-2">Sec</th>
-            <th className="p-2">Scan</th>
+            <th className="p-2">Scanned:</th>
           </tr>
         </thead>
         <tbody>
           {sortedAttendance.map((student, index) => (
-            <tr className={`${index % 2 === 0 ? 'bg-gray-100' : ''}`} key={student.id}>
-              <td className="p-2">
-                {sortedAttendance.length - index}
-              </td>
+            <tr
+              className={`${
+                index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
+              } rounded-lg mb-2`}
+              key={student.id}
+            >
+              <td className="p-2">{sortedAttendance.length - index}</td>
               <td className="p-2 font-bold whitespace-nowrap">
                 {student.name}
               </td>
@@ -136,6 +139,7 @@ function TodayAttendance() {
         </tbody>
       </table>
     </div>
+
 
   );
 }
