@@ -112,7 +112,6 @@ function TodayAttendance() {
             placeholder="Search by name"
           />
         </div>
-      </div>
       <div className="overflow-x-auto">
         <table className="table-auto border-collapse w-full">
           <thead>
@@ -148,7 +147,6 @@ function TodayAttendance() {
           </tbody>
         </table>
       </div>
-    </div>
   );
 }
 
