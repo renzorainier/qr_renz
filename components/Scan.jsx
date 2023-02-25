@@ -126,4 +126,4 @@ function Scan() {
   );
 }
 
-export default Scan;"
+export default Scan;
