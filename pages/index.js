@@ -6,6 +6,7 @@ import SavePresentStudents from "components/Save";
 import Generate from "components/Generate";
 import { useEffect } from "react";
 import StudentCollection from "components/Create";
+import TabSelector from "components/TabSelector";
 
 export default function Home() {
   const [component, setComponent] = useState("");
@@ -26,6 +27,8 @@ export default function Home() {
         return <Generate />;
       case "Create":
         return <StudentCollection />;
+        case "TabSelector":
+        return <TabSelector />;
       default:
         return (
           <>
@@ -68,6 +71,13 @@ export default function Home() {
                 onClick={handleClick}
               >
                 Update Data
+              </button>
+              <button
+                value="TabSelector"
+                className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+                onClick={handleClick}
+              >
+                TabSelector
               </button>
             </div>
           </>
